@@ -10,7 +10,8 @@ If you want to create Your own bot, just extend `Service` class and append `bot.
 For service example look at `eu.matejkormuth.ts3bot.services.PexelConnector`.
 
 Example bot.properties:
-``` 
+
+``` properties 
 # TS3 Bot configuration.
 config.useExternal=false
 query.login=query123

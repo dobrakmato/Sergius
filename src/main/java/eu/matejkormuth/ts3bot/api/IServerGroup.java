@@ -18,18 +18,56 @@ import java.util.Collection;
 import javax.annotation.Nonnull;
 
 // TODO: Refactor names
+/**
+ * Represents server group on TeamSpeak server.
+ */
 public interface IServerGroup extends IUserGroup {
     
+    /**
+     * Adds specified {@link IClient} to this server group.
+     * 
+     * @param client
+     *            client which should be added to this group
+     */
     public abstract void addClient(@Nonnull IClient client);
     
+    /**
+     * Removes specified {@link IClient} from this server group.
+     * 
+     * @param client
+     *            client which should be added to this group
+     */
     public abstract void removeClient(@Nonnull IClient client);
     
+    /**
+     * Chanes name of this server group to specified name.
+     * 
+     * @param name
+     *            new name
+     */
     public abstract void setName(@Nonnull String name);
     
-    public abstract void delete();
+    /**
+     * Removes this channel group from server.
+     */
+    public abstract void remove();
     
+    /**
+     * Returns view of {@link IClient}s in this {@link IServerGroup}. Does not force update clients (collection may be
+     * outdated).
+     * 
+     * @return collection of clients in this channel group
+     */
     public abstract Collection<IClient> getClients();
     
+    /**
+     * Returns view of {@link IClient}s in this {@link IServerGroup}. Force update clients if parameter
+     * <code>forceUpdate</code> is true.
+     * 
+     * @param forceUpdate
+     *            whether to update clients from teamspeak server
+     * @return collection of clients in this channel group
+     */
     public abstract Collection<IClient> getClients(boolean update);
     
 }

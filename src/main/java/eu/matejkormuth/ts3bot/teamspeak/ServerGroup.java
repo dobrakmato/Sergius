@@ -48,7 +48,7 @@ public class ServerGroup extends UserGroup implements
         this.server.getConnection().getApi().renameServerGroup(this.getId(), name);
     }
     
-    public void delete() {
+    public void remove() {
         this.server.getConnection().getApi().deleteServerGroup(this.getId());
         this.server.removeServerGroup(this);
     }

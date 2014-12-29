@@ -16,18 +16,48 @@ package eu.matejkormuth.ts3bot.api;
 import java.util.Date;
 
 // TODO: Refactor names
+/**
+ * Represents complaint on TeamSpeak server.
+ */
 public interface IComplaint {
-    
+    /**
+     * Returns {@link IVirtualServer} on which is this complaint present.
+     * 
+     * @return instance of {@link IVirtualServer}
+     */
     public abstract IVirtualServer getServer();
     
+    /**
+     * Returns {@link IClient} which created this complaint.
+     * 
+     * @return instance of client thats complaining
+     */
     public abstract IClient getSource();
     
+    /**
+     * Returns {@link IClient} which is this complaint targeted at.
+     * 
+     * @return target of this complaint
+     */
     public abstract IClient getTarget();
     
+    /**
+     * Returns message of this complaint.
+     * 
+     * @return this complaint's message
+     */
     public abstract String getMessage();
     
+    /**
+     * Returns date of creation of this complaint.
+     * 
+     * @return creation date
+     */
     public abstract Date getCreatedAt();
     
+    /**
+     * Removes this complain.
+     */
     public abstract void remove();
     
 }

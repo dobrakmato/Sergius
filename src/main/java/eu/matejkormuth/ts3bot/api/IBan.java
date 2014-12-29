@@ -87,17 +87,39 @@ public interface IBan {
      */
     public abstract String getInvokerName();
     
+    /**
+     * Returns unique id of client that created this ban.
+     * 
+     * @return UId of invoker
+     */
     public abstract String getInvokerUId();
     
+    /**
+     * Returns databse id of client that created this ban.
+     * 
+     * @return database id of invoker
+     */
     public abstract int getInvokerDBId();
     
+    /**
+     * Returns reason of this ban.
+     * 
+     * @return this ban's reason
+     */
     @Nullable
     public abstract String getReason();
     
+    /**
+     * Returns number of connections after the client was banned.
+     * 
+     * @return count of tries to connect after ban
+     */
     public abstract int getEnforcementsCount();
     
+    /**
+     * Removes this ban from TeamSpeak server.
+     */
     public abstract void remove();
     
     public abstract String toString();
-    
 }

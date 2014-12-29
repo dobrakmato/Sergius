@@ -333,7 +333,7 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
                 .setClientChannelGroup(group.getId(), this.cid, client.getDatabaseId());
     }
     
-    public void delete() {
+    public void remove() {
         this.server.getConnection().getApi().deleteChannel(this.getId());
         this.server.removeChannel(this);
     }

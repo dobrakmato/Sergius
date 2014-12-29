@@ -14,14 +14,42 @@
 package eu.matejkormuth.ts3bot.api;
 
 // TODO: Refactor names
+/**
+ * Represents offline message on TeamSpeak server.
+ */
 public interface IOfflineMessage {
+    /**
+     * Returns id of this message on TeamSpeak server.
+     * 
+     * @return message id
+     */
     public abstract int getMessageId();
     
+    /**
+     * Returns subject of this message.
+     * 
+     * @return subject
+     */
     public abstract String getSubject();
     
+    /**
+     * Returns content of this message.
+     * 
+     * @return content
+     */
     public abstract String getContent();
     
+    /**
+     * Returns unique identifier of sender.
+     * 
+     * @return UId of sender
+     */
     public abstract String getSenderUid();
     
+    /**
+     * Returns unique identifier of receiver.
+     * 
+     * @return UId of receiver
+     */
     public abstract String getRecipientUid();
 }

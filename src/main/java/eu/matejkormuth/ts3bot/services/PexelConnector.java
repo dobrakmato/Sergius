@@ -54,7 +54,7 @@ public class PexelConnector extends Service {
     
     @Override
     public void disable() {
-        this.maminec.delete();
+        this.maminec.remove();
     }
     
     @Subscribe
