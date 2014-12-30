@@ -68,6 +68,6 @@ public interface IServerGroup extends IUserGroup {
      *            whether to update clients from teamspeak server
      * @return collection of clients in this channel group
      */
-    public abstract Collection<IClient> getClients(boolean update);
+    public abstract Collection<IClient> getClients(boolean forceUpdate);
     
 }

@@ -98,7 +98,7 @@ public interface IClient {
     /**
      * Returns client's country.
      * 
-     * @return
+     * @return client's country
      */
     public abstract String getCounty();
     

@@ -2,6 +2,8 @@ Sergius [![Build Status](https://travis-ci.org/dobrakmato/Sergius.svg)](https://
 -----------
 Sergius is *object-oriented* Java TeamSpeak 3 ServerQuery library prepeared for creating bots. **It is in heavy development.**
 
+Javadocs (tries to be latest always): <http://beta.mtkn.eu/docs/Sergius/>
+
 It uses TheHolyWaffle's TeamSpeak 3 library as wrapper of connection to server query and provides *object-oriented interface for work with ServerQuery*. For dependency managment it uses Maven and for loggin **slf4j**. You can custom log format in log4j.properties.
 
 # Writing a Bot
