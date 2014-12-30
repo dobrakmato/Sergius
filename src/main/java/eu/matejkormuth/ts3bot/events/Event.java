@@ -18,7 +18,7 @@ import javax.annotation.Nonnull;
 import eu.matejkormuth.ts3bot.api.IVirtualServer;
 
 /**
- *
+ * Specifies Event that happend on some VirtualServer.
  */
 public abstract class Event {
     private final IVirtualServer virtualServer;
@@ -27,6 +27,11 @@ public abstract class Event {
         this.virtualServer = server;
     }
     
+    /**
+     * Returns {@link IVirtualServer} on which this event happened.
+     * 
+     * @return virtual server instance
+     */
     public IVirtualServer getVirtualServer() {
         return this.virtualServer;
     }

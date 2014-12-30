@@ -14,10 +14,16 @@
 package eu.matejkormuth.ts3bot.teamspeak;
 
 /**
- *
+ * Represents all avaliable client types.
  */
 public enum ClientType {
+    /**
+     * Client is connected trough TeamSpak application.
+     */
     TS_CLIENT(0),
+    /**
+     * ServerQuery connection.
+     */
     SERVER_QUERY(1);
     
     private int id;

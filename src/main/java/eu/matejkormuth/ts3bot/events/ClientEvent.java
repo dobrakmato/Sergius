@@ -19,7 +19,7 @@ import eu.matejkormuth.ts3bot.api.IClient;
 import eu.matejkormuth.ts3bot.api.IVirtualServer;
 
 /**
- *
+ * Represents event that is about client.
  */
 public abstract class ClientEvent extends Event {
     private final IClient client;

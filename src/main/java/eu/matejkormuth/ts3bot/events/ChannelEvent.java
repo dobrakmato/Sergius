@@ -19,7 +19,7 @@ import eu.matejkormuth.ts3bot.api.IChannel;
 import eu.matejkormuth.ts3bot.api.IVirtualServer;
 
 /**
- *
+ * Represents channel event.
  */
 public abstract class ChannelEvent extends Event {
     private final IChannel channel;

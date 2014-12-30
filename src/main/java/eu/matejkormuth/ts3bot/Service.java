@@ -24,22 +24,49 @@ public abstract class Service {
     private Bot          bot;
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     
+    /**
+     * Returns instance of Bot this {@link Service} is running in.
+     * 
+     * @return bot instance
+     */
     public Bot getBot() {
         return this.bot;
     }
     
+    /**
+     * Sets bot instance.
+     * 
+     * @param bot
+     *            bot instance
+     */
     void setBot(final Bot bot) {
         this.bot = bot;
     }
     
+    /**
+     * Returns loggler of this {@link Service}.
+     * 
+     * @return service {@link Logger}
+     */
     public Logger getLogger() {
         return this.logger;
     }
     
+    /**
+     * Enables this service.
+     */
     public abstract void enable();
     
+    /**
+     * Disables this service.
+     */
     public abstract void disable();
     
+    /**
+     * Check whether this service can run in different thread.
+     * 
+     * @return true if this server is asynchronous
+     */
     public boolean isAsynchronous() {
         return true;
     }

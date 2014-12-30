@@ -30,11 +30,16 @@ import eu.matejkormuth.ts3bot.teamspeak.QueryCreditnals;
 import eu.matejkormuth.ts3bot.teamspeak.VirtualServer;
 
 /**
- * 
+ * Specifies main bot class.
  */
 public class Bot {
     private static Bot instance;
     
+    /**
+     * Returns instance of currently running Bot.
+     * 
+     * @return Bot instance
+     */
     public static Bot getInstance() {
         return Bot.instance;
     }
@@ -46,6 +51,9 @@ public class Bot {
     private QueryConnection     queryConnection;
     private ConsoleReader       consoleReader;
     
+    /**
+     * Creates a new bot.
+     */
     public Bot() {
         Bot.instance = this;
     }
@@ -168,6 +176,9 @@ public class Bot {
         this.consoleReader.enable();
     }
     
+    /**
+     * Shutdowns all services and disconnects from ServerQuery.
+     */
     public void shutdown() {
         // Disable reading of commands.
         this.consoleReader.disable();
@@ -201,22 +212,47 @@ public class Bot {
         this.logger.info("Bye!");
     }
     
+    /**
+     * Returns this bot {@link QueryConnection}.
+     * 
+     * @return currently used query connection
+     */
     public QueryConnection getQueryConnection() {
         return this.queryConnection;
     }
     
+    /**
+     * Returns configuration of this bot.
+     * 
+     * @return this bot's configuration
+     */
     public Configuration getConfiguration() {
         return this.configuration;
     }
     
+    /**
+     * Returns list of all {@link Service}s used by this bot.
+     * 
+     * @return all services
+     */
     public List<Service> getServices() {
         return this.services;
     }
     
+    /**
+     * Returns this bot's logger.
+     * 
+     * @return logger instance
+     */
     public Logger getLogger() {
         return this.logger;
     }
     
+    /**
+     * Returns event bus.
+     * 
+     * @return event bus
+     */
     public EventBus getEventBus() {
         return this.eventBus;
     }

@@ -16,7 +16,7 @@ package eu.matejkormuth.ts3bot;
 import java.util.Scanner;
 
 /**
- *
+ * Specifies {@link Service} that reads commands from STDIN and executes them.
  */
 public class ConsoleReader extends Service {
     private boolean isRunning = true;

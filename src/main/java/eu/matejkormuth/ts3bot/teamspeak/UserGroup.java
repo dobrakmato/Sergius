@@ -28,7 +28,7 @@ public abstract class UserGroup implements eu.matejkormuth.ts3bot.api.IUserGroup
     
     protected final VirtualServer server;
     
-    public UserGroup(final VirtualServer server, final int id, final String name) {
+    protected UserGroup(final VirtualServer server, final int id, final String name) {
         this.id = id;
         this.name = name;
         this.server = server;

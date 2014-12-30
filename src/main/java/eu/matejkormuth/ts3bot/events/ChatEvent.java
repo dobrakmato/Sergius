@@ -19,7 +19,7 @@ import eu.matejkormuth.ts3bot.api.IClient;
 import eu.matejkormuth.ts3bot.api.IVirtualServer;
 
 /**
- *
+ * Represents chat event.
  */
 public abstract class ChatEvent extends Event {
     private final String  message;

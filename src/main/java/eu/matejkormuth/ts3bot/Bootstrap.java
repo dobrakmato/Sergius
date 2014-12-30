@@ -14,10 +14,14 @@
 package eu.matejkormuth.ts3bot;
 
 /**
- *
+ * Class that loads bot and start it with specified arguments.
  */
 public class Bootstrap {
+    /**
+     * Main method...
+     */
     public static void main(final String[] args) {
+        // Currently does not have any arguments.
         new Bot().boot();
     }
 }
