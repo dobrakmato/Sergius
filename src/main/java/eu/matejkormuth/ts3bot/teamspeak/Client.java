@@ -344,13 +344,13 @@ public class Client implements Updatable, eu.matejkormuth.ts3bot.api.IClient {
         return complaints;
     }
     
-    public void deleteComplaintFrom(@Nonnull final IClient from) {
+    public void removeComplaintFrom(@Nonnull final IClient from) {
         this.server.getConnection()
                 .getApi()
                 .deleteComplaint(this.getDatabaseId(), from.getDatabaseId());
     }
     
-    public void addComplain(@Nonnull final String text) {
+    public void addComplaint(@Nonnull final String text) {
         this.server.getConnection().getApi().addComplain(this.getDatabaseId(), text);
     }
     
