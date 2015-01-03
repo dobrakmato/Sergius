@@ -518,6 +518,18 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
         }
         
         /**
+         * Specified description of this channel.
+         * 
+         * @param description
+         *            description
+         * @return self
+         */
+        public ChannelBuilder description(final String description) {
+            this.props.put(ChannelProperty.CHANNEL_DESCRIPTION, description);
+            return this;
+        }
+        
+        /**
          * Creates new channel on Teamspeak server and returns object.
          * 
          * @return newly created {@link Channel}
@@ -551,5 +563,6 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
             this.props.put(ChannelProperty.CHANNEL_PASSWORD, string);
             return this;
         }
+        
     }
 }
