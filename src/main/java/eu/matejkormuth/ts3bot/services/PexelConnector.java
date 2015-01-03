@@ -36,8 +36,7 @@ public class PexelConnector extends Service {
     @Override
     public void enable() {
         this.channels = new ArrayList<IChannel>();
-        this.maminec = new ChannelBuilder(this.getBot().getVirtualServer()).name(
-                "Maminec")
+        this.maminec = new ChannelBuilder(this.getBot().getVirtualServer()).name("Kanal")
                 .parent(0)
                 .permanent()
                 .build();
@@ -81,11 +80,11 @@ public class PexelConnector extends Service {
     
     @Subscribe
     public void onChat(final ChannelChatMessageEvent event) {
-        
+        this.getLogger().info("Dostal som spravu do kanalu: " + event.getMessage());
     }
     
     @Subscribe
     public void onChat(final PrivateChatMessageEvent event) {
-        
+        this.getLogger().info("Dostal som sukromnu spravu: " + event.getMessage());
     }
 }

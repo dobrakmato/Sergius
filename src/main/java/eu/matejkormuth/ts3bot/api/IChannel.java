@@ -251,7 +251,8 @@ public interface IChannel {
             @Nonnull IChannelGroup group);
     
     /**
-     * Removes this channel from TeamSpeak server.
+     * Removes this channel from TeamSpeak server. If there are subchannels, they will be removed. Clients will be
+     * kicked.
      */
     public abstract void remove();
     
