@@ -17,9 +17,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -268,8 +270,7 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
             @Nonnull final String value) {
         if (property.isChangeable()) {
             this.editChannel(Collections.singletonMap(property, value));
-        }
-        else {
+        } else {
             throw new IllegalArgumentException(
                     "Can't change unchangeable ChannelProperty!");
         }
@@ -340,6 +341,16 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
     
     public void sendMessage(@Nonnull final String message) {
         this.server.getConnection().getApi().sendChannelMessage(this.getId(), message);
+    }
+    
+    public Set<IChannel> getSubChannels(final boolean forceUpdate) {
+        Set<IChannel> channels = new HashSet<IChannel>();
+        for (IChannel c : this.server.getChannels(forceUpdate)) {
+            if (c.getParent() == this) {
+                channels.add(c);
+            }
+        }
+        return channels;
     }
     
     protected void updateBy(
@@ -480,8 +491,7 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
                         com.github.theholywaffle.teamspeak3.api.ChannelProperty.valueOf(property.name()),
                         value);
                 return this;
-            }
-            else {
+            } else {
                 throw new IllegalArgumentException(
                         "Can't set unchangeable ChannelProperty!");
             }

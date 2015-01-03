@@ -15,6 +15,7 @@ package eu.matejkormuth.ts3bot.api;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Nonnull;
 
@@ -263,6 +264,15 @@ public interface IChannel {
      *            message to send
      */
     public abstract void sendMessage(@Nonnull String message);
+    
+    /**
+     * Returns collection of channels with this channel as parent channel.
+     * 
+     * @param forceUpdate
+     *            whether to update channels from server before executing
+     * @return set of sub channels
+     */
+    public abstract Set<IChannel> getSubChannels(boolean forceUpdate);
     
     /**
      * Updates properties of this {@link IChannel} from TeamSpeak server.
