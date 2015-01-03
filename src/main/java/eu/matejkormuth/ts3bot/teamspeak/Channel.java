@@ -304,6 +304,7 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
                     com.github.theholywaffle.teamspeak3.api.ChannelProperty.valueOf(entry.getKey()
                             .name()), entry.getValue());
         }
+        this.server.getConnection().getApi().editChannel(this.cid, props);
     }
     
     @CachedValue
