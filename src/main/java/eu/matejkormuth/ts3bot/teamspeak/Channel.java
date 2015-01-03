@@ -400,6 +400,11 @@ public class Channel implements Updatable, eu.matejkormuth.ts3bot.api.IChannel {
         this.updateBy(this.server.getConnection().getApi().getChannelInfo(this.getId()));
     }
     
+    void notifyUserJoined() {
+        this.totalClientsFamily++;
+        this.totalClients++;
+    }
+    
     @Override
     public String toString() {
         return "Channel [cid=" + this.cid + ", pcid=" + this.pcid + ", name="

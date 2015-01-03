@@ -433,6 +433,8 @@ public class Client implements Updatable, eu.matejkormuth.ts3bot.api.IClient {
     }
     
     public void moveTo(@Nonnull final IChannel channel) {
+        // Notify channel about change as soon as possible!
+        ((Channel) channel).notifyUserJoined();
         this.server.getConnection().getApi().moveClient(this.getId(), channel.getId());
     }
     
